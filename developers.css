@@ -1,29 +1,69 @@
+/* Container for the entire section */
 #developers {
+    padding: 60px 0;
     width: 100%;
 }
 
+/* Remove default link styling */
+.dev-card-link {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+/* Add a slight lift effect when hovering over a developer */
+.dev-card-link:hover {
+    transform: translateY(-10px);
+}
+
+/* Image Container Styling */
+.dev-image-container {
+    width: 150px;
+    height: 150px;
+    margin: 15px auto;
+    overflow: hidden;
+    border-radius: 50%; /* Makes the image circular */
+    border: 3px solid #D4AF37; /* Gold border to match your theme */
+}
+
+.dev-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the photo isn't stretched */
+    display: block;
+}
+
+/* Highlight the name on hover */
+.dev-card-link:hover .dev-name-gold {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+}
 .dev-header-area {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 40px;
 }
 
 .dev-subtitle-text {
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.4rem;
+    margin-top: 10px;
 }
 
+/* The dark blue box with the border surrounding all members */
 .dev-wireframe-container {
-    background: rgba(17, 30, 64, 0.75);
-    border: 1px solid rgba(43, 75, 138, 0.9);
-    border-radius: 20px;
-    padding: 2rem 1.25rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    background-color: rgba(17, 30, 64, 0.7); /* Deep blue background */
+    border: 2px solid #2b4b8a; /* Accent blue border */
+    border-radius: 15px;
+    padding: 60px 20px;
+    width: 100%;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
+/* The horizontal layout for the 5 members */
 .dev-flex-row {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important; /* Forces 5 columns */
+    gap: 15px;
+    width: 100%;
 }
 
 .dev-item {
@@ -33,49 +73,43 @@
     text-align: center;
 }
 
+/* Role Label at the top */
 .dev-role-top {
     color: #ffffff;
-    font-size: 0.82rem;
-    font-weight: 700;
+    font-size: 0.85rem;
+    font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 0.75rem;
-    letter-spacing: 0.5px;
+    margin-bottom: 12px;
 }
 
+/* Photo box */
 .dev-image-placeholder {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 0.85; /* Rectangular shape matching wireframe */
     border: 2px solid #2b4b8a;
-    border-radius: 14px;
-    background: rgba(0, 0, 0, 0.22);
-    display: grid;
-    place-items: center;
-    color: rgba(255, 255, 255, 0.35);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.3);
     font-style: italic;
-    margin-bottom: 0.9rem;
+    margin-bottom: 15px;
 }
 
+/* Gold names */
 .dev-name-gold {
-    color: var(--gold-light);
+    color: #fce07d !important; /* Gold color from your common.css */
     font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.35;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0;
 }
 
-@media (max-width: 1000px) {
+/* Responsiveness for small screens */
+@media (max-width: 900px) {
     .dev-flex-row {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 700px) {
-    .dev-flex-row {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .dev-flex-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px;
     }
 }

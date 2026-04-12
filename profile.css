@@ -1,40 +1,56 @@
-.profile-container {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 2rem;
-    align-items: start;
+/* Removes link decoration and ensures it takes up the right space */
+.profile-redirect-link {
+    text-decoration: none;
+    flex: 1.1; /* Keeps the same width as your panels */
+    display: block;
 }
 
-.profile-overview {
-    padding-top: 0.5rem;
-}
-
-.profile-description {
-    color: #ffffff;
-    font-size: 1.05rem;
-    line-height: 1.9;
-    max-width: 650px;
-}
-
-.profile-panel .panel-header h3 {
-    font-size: 1.2rem;
-}
-
-.profile-top {
+.profile-image-clean {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.hero-avatar-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    /* Adds a glow effect on the image instead of a box border */
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+    transition: filter 0.3s ease;
+}
+
+/* Hover effects */
+.profile-redirect-link:hover .profile-image-clean {
+    transform: scale(1.02);
+}
+
+.profile-redirect-link:hover .hero-avatar-img {
+    filter: drop-shadow(0 0 15px rgba(236, 199, 65, 0.801)); /* Subtle gold glow */
+}
+
+.click-label {
+    margin-top: 15px;
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .avatar {
-    width: 96px;
-    height: 96px;
-    background: #111e40;
+    width: 100px;
+    height: 100px;
+    background-color: #111e40;
     border: 2px solid var(--gold-main);
-    border-radius: 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    flex-shrink: 0;
 }
 
 .avatar img {
@@ -42,118 +58,129 @@
     height: 100%;
     object-fit: cover;
 }
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px; /* Matching the gap from your Features section */
+    width: 100%;
+}
 
-.xp-bar-container {
+.profile-overview {
     flex: 1;
+    text-align: left; /* Keeps descriptions clean on the left */
+    padding: 20px;
+}
+
+.profile-section .panel {
+    flex: 1.1; /* Slightly wider than the text side */
+    margin: 0;   /* Removes any default margins that might break alignment */
+}
+.gold-heading {
+    font-size: 3rem;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+
+}
+
+.profile-description {
+    color: white; /* 1. High Contrast color matches heading */
+    font-size: 1.8rem;         /* 2. Larger size is more readable */
+    line-height: 1.8;           /* 3. More space between lines feels luxurious */
+    max-width: 700px;             /* 4. Limits the line-length for easier reading */
+    text-align: justify;        /* 5. Clean, book-like edges */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* 6. POP: Text "floats" above background */  
+}
+
+.overview-item {
+    margin-bottom: 30px;
+}
+
+.overview-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.xp-bar-container {
+    flex-grow: 1;
 }
 
 .xp-text {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-    flex-wrap: wrap;
+    margin-bottom: 5px;
+    font-size: 14px;
 }
 
 .xp-bar {
     height: 12px;
-    background: rgba(0, 0, 0, 0.45);
-    border-radius: 999px;
+    background-color: #000;
+    border-radius: 6px;
     border: 1px solid var(--accent-blue);
     overflow: hidden;
 }
 
 .xp-fill {
     height: 100%;
+    width: 75%;
     background: linear-gradient(to right, var(--gold-main), var(--gold-light));
-    border-radius: inherit;
-}
-
-.section-label {
-    font-size: 1.25rem;
-    margin: 1.25rem 0 0.9rem;
 }
 
 .badges-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 0.75rem;
-    margin-bottom: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .badge-item {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.85rem;
-    border-radius: 12px;
+    background-color: rgba(255,255,255,0.05);
+    padding: 12px;
+    border-radius: 6px;
     text-align: center;
-    font-size: 0.92rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
 }
 
 .badge-item.active {
+    border-color: 1px solid rgba(255,255,255,0.1);
     color: var(--gold-light);
-    border-color: rgba(252, 224, 125, 0.25);
 }
 
 .badge-item.locked {
-    opacity: 0.55;
+    opacity: 0.5;
 }
 
 .quest-list {
     list-style: none;
-    display: grid;
-    gap: 0.75rem;
 }
 
 .quest-item {
+    background-color: rgba(255,255,255,0.05);
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    padding: 0.9rem 1rem;
-}
-
-.quest-info strong {
-    display: block;
-    margin-bottom: 0.15rem;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .status-badge {
-    padding: 0.35rem 0.7rem;
-    border-radius: 999px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    white-space: nowrap;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .status-complete {
-    background: var(--success-green);
-    color: #fff;
+    background-color: var(--success-green); color: white;
 }
 
 .status-due {
-    background: var(--warning-orange);
-    color: #fff;
-}
-
-@media (max-width: 900px) {
-    .profile-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .profile-top,
-    .quest-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .status-badge {
-        align-self: flex-start;
-    }
+    background-color: var(--warning-orange); color: white;
 }

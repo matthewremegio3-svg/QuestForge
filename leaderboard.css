@@ -1,90 +1,122 @@
-.leaderboard-container {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 2rem;
-    align-items: start;
-}
-
-.leaderboard-overview {
-    padding-top: 0.5rem;
-}
-
-.leaderboard-description {
-    color: #ffffff;
-    font-size: 1.05rem;
-    line-height: 1.9;
-    max-width: 650px;
-}
-
-.leaderboard-table {
+/* 1. Main Table Styling */
+table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 0; /* Removed bottom margin to fit panel better */
 }
 
-.leaderboard-table th {
+th {
     text-align: left;
-    padding: 0.95rem 0.75rem;
-    color: var(--gold-light);
-    font-size: 0.82rem;
+    padding: 15px 10px; /* Increased padding for better hierarchy */
+    color: var(--gold-light); /* Matching your gold theme */
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 1px solid rgba(252, 224, 125, 0.2);
+    border-bottom: 2px solid rgba(255, 215, 0, 0.2); /* Thicker gold-tinted line */
 }
 
-.leaderboard-table td {
-    padding: 1rem 0.75rem;
-    color: #eee;
+td {
+    padding: 15px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #eee;
+    font-size: 1rem;
 }
 
-.leaderboard-table tbody tr:nth-child(even) {
-    background: rgba(255, 255, 255, 0.02);
+/* 2. Row Interactivity */
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
 }
 
-.leaderboard-table tbody tr:hover {
-    background: rgba(212, 175, 55, 0.08);
+tbody tr:hover {
+    background-color: rgba(212, 175, 55, 0.08);
+    transition: background 0.3s ease;
+}
+.leaderboard-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px; /* Matching the gap from your Features section */
+    width: 100%;
+}
+.leaderboard-overview{
+    flex: 1;
+    text-align: left; /* Keeps descriptions clean on the left */
+    padding: 20px;
+}
+.leaderboard-description {
+    color: white; /* 1. High Contrast color matches heading */
+    font-size: 1.8rem;         /* 2. Larger size is more readable */
+    line-height: 1.8;           /* 3. More space between lines feels luxurious */
+    max-width: 700px;             /* 4. Limits the line-length for easier reading */
+    text-align: justify;        /* 5. Clean, book-like edges */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* 6. POP: Text "floats" above background */  
 }
 
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px; /* Space between the panel and the text */
+    width: 100%;
+}
+
+.panel {
+    flex: 0.9;         /* Takes up 2.5x more space than the description */
+    margin: 0;
+    width: 100%;
+    height: 100%; /* Forces table to stretch to the 500px height */
+    overflow: hidden; /* Prevents overflow issues */
+}
+/* 3. Rank Number "Medals" */
 .rank-number {
-    width: 34px;
-    height: 34px;
-    display: inline-grid;
-    place-items: center;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;  /* Made into a perfect circle */
+    height: 32px; /* Made into a perfect circle */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%; /* Pure circle */
+    font-weight: bold;
     font-size: 0.9rem;
 }
 
+/* Top 3 Highlighting */
 .rank-1 {
-    background: #ffd700;
-    color: #111;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.35);
+    background-color: #ffd700; /* Gold */
+    color: #000;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
 .rank-2 {
-    background: #c0c0c0;
-    color: #111;
+    background-color: #c0c0c0; /* Silver */
+    color: #000;
 }
 
 .rank-3 {
-    background: #cd7f32;
-    color: #111;
+    background-color: #cd7f32; /* Bronze */
+    color: #000;
 }
 
-@media (max-width: 900px) {
-    .leaderboard-container {
-        grid-template-columns: 1fr;
-    }
+/* 4. Action Button Styling */
+.join-group-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px; /* Added padding inside the panel */
 }
 
-@media (max-width: 640px) {
-    .leaderboard-table {
-        font-size: 0.9rem;
-    }
+.btn-join-group {
+    background-color: var(--warning-orange);
+    color: white;
+    padding: 8px 16px; /* Slightly larger for easier clicking */
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
 
-    .leaderboard-table th,
-    .leaderboard-table td {
-        padding: 0.75rem 0.45rem;
-    }
+.btn-join-group:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+    filter: brightness(1.1);
 }

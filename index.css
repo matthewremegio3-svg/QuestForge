@@ -3,10 +3,10 @@
 .questforge {
     display: flex;
     align-items: center;
-    justify-content: center; 
-    text-align: center; 
-    max-width: 900px; 
-    margin: 10px auto; 
+    justify-content: center;
+    text-align: center;
+    max-width: 900px;
+    margin: 10px auto;
     margin-top: 50px;
     padding: 0px;
 }
@@ -18,10 +18,10 @@
 }
 
 .questforge-logo-img {
-    height: 350px; 
-    width: 100%;   
-    max-width: 450px; 
-    filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5)); 
+    height: 350px;
+    width: 100%;
+    max-width: 450px;
+    filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5));
 }
 
 .questforge-title {
@@ -38,7 +38,7 @@
     font-size: 1.8rem;
     color: #ffffff;
     line-height: 1.8;
-    max-width: 700px; 
+    max-width: 700px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
@@ -74,11 +74,11 @@
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 .showcase-text p {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     line-height: 1.6;
     color: #ffffff;
     margin-top: 10px;
-     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
 /* This container holds the space for the image */
