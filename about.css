@@ -1,123 +1,111 @@
 /* =========================================
-ABOUT SECTION LAYOUT (Inherits colors/borders from common.css)
+ABOUT US & HOW IT WORKS SECTION
    ========================================= */
 
-/* 1. Header Area */
+/* 1. Section & Header Spacing */
+.page-section {
+    padding: 120px 0; /* Increased for better vertical separation */
+    min-height: 80vh;
+}
+
 .about-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 80px; /* Space before the panels start */
 }
 
-/* Subtitle matching your leaderboard/profile description sizes */
 .about-subtitle {
     color: var(--text-muted);
-    font-size: 1.4rem;
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 1.3rem;
+    max-width: 850px;
+    margin: 20px auto 0; /* Space between gold-heading and subtitle */
     line-height: 1.8;
-    text-align: center;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-/* 2. Grid Layout - Perfectly matches .profile-container & .leaderboard-container */
+/* 2. Grid Layout (Teachers vs Students / Mission vs Vision) */
 .panels-grid {
     display: flex;
     justify-content: space-between;
-    align-items: stretch; /* Forces both panels to be the exact same height */
-    gap: 40px; /* Exact same gap used in your other sections */
+    align-items: stretch;
+    gap: 60px; /* Stronger gap to prevent panels from clumping */
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
-/* 3. Panel Sizing - Lets common.css handle the actual border/background designs */
+/* 3. Panel Internal Spacing (Fixing the Compactness) */
 .panels-grid .panel {
-    flex: 1; /* Both panels take up exactly half the space */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    margin: 0;
 }
 
-/* Allows the inside of the panel to stretch to the bottom */
+/* Override common.css padding for the About page to make it roomier */
 .panels-grid .panel-content {
+    padding: 45px 40px;
     flex-grow: 1;
-    /* Padding is already handled globally by common.css */
 }
 
-/* 4. List Styles (Standard Bullet Points) */
+/* 4. List Styling (Mission/Team Lists) */
 .mission-list, .team-list {
-    list-style-type: disc; /* Brings back the bullet points */
-    padding-left: 25px; /* Gives space for the bullets to show inside the panel */
+    list-style-type: disc;
+    padding-left: 25px; /* Keeps bullets neatly inside */
     margin: 0;
 }
 
 .mission-list li, .team-list li {
     color: #eee;
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin-bottom: 12px; /* Adds space between each bullet point */
-    padding: 0; /* Removed the table-like padding */
-    border: none; /* Removed the table-like lines */
+    font-size: 1.1rem;
+    line-height: 1.8; /* Extra air between lines */
+    margin-bottom: 22px; /* Extra air between bullet points */
 }
 
-/* Removes the extra margin from the very last item */
+/* Removes margin from the very last bullet */
 .mission-list li:last-child, .team-list li:last-child {
     margin-bottom: 0;
 }
 
-/* Highlights names in Gold */
-.team-name {
-    color: var(--gold-light);
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-
-/* 5. Call-To-Action (CTA) Section */
+/* 5. CTA Section (The Join Today Block) */
 .cta-section {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Aligns text and button to the right */
-    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;
+    padding: 100px 20px;
+    background-color: rgba(255, 255, 255, 0.03); /* Subtle background shift */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .cta-text {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-size: 2.4rem;
+    margin-bottom: 40px;
     line-height: 1.3;
-    text-align: right;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 
-/* Button inheriting your site's warning-orange color */
 .cta-button {
     background-color: var(--warning-orange);
     color: white;
-    padding: 12px 30px;
-    border-radius: 4px;
-    font-size: 15px;
+    padding: 16px 45px;
+    border-radius: 8px;
+    font-size: 1.1rem;
     font-weight: bold;
-    border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(251, 255, 44, 0.3);
-    filter: brightness(1.1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* 6. Mobile Responsiveness */
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     .panels-grid {
-        flex-direction: column; /* Stacks panels on smaller screens */
+        flex-direction: column;
+        gap: 40px;
     }
-    .cta-section {
-        align-items: center;
-        text-align: center;
-    }
+
     .cta-text {
-        text-align: center;
+        font-size: 1.8rem;
     }
 }

@@ -93,7 +93,7 @@
     line-height: 1.8;           /* 3. More space between lines feels luxurious */
     max-width: 700px;             /* 4. Limits the line-length for easier reading */
     text-align: justify;        /* 5. Clean, book-like edges */
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* 6. POP: Text "floats" above background */  
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* 6. POP: Text "floats" above background */
 }
 
 .overview-item {
