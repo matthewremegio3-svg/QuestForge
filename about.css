@@ -1,5 +1,5 @@
 /* =========================================
-ABOUT US & HOW IT WORKS SECTION
+   ABOUT US & HOW IT WORKS SECTION
    ========================================= */
 
 /* 1. Section & Header Spacing */
@@ -40,7 +40,7 @@ ABOUT US & HOW IT WORKS SECTION
 
 /* Override common.css padding for the About page to make it roomier */
 .panels-grid .panel-content {
-    padding: 45px 40px;
+    padding: 45px 40px; 
     flex-grow: 1;
 }
 

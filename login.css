@@ -22,13 +22,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 60vh;
+    min-height: 60vh; 
     margin-top: 100px;
 }
 
 .login-panel {
     width: 100%;
-    max-width: 400px;
+    max-width: 400px; 
 }
 
 .login-form {
@@ -43,7 +43,7 @@
     font-size: 1.1rem;
     padding: 12px;
     margin-top: 10px;
-    border: none;
+    border: none; 
 }
 
 .login-footer-links {
