@@ -149,6 +149,7 @@ a {
   display: flex;
   align-items: center;
   gap: 28px;
+  justify-items: center;
 }
 
 .nav-menu a {
@@ -157,7 +158,7 @@ a {
   color: var(--muted);
   font-weight: 750;
   font-size: 0.95rem;
-  transition: 0.3s ease;
+  transition: 0.3s ease;;
 }
 
 .nav-menu a::after {
